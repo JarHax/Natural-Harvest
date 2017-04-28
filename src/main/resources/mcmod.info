@@ -1,0 +1,16 @@
+[
+{
+  "modid": "naturalharvest",
+  "name": "Natural Harvest",
+  "description": "PLACEHOLDER.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["NotAModder"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
