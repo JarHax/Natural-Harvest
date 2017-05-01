@@ -49,7 +49,7 @@ repositories {
 
 dependencies {
 
-    compile "notalib:NotALib:1.0.+"
+    compile "notalib:NotALib:${version_notalib}"
 }
 
 processResources {
