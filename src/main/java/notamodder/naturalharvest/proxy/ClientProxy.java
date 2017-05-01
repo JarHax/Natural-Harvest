@@ -3,8 +3,10 @@ package notamodder.naturalharvest.proxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import notamodder.notalib.proxy.CommonProxy;
 
+/**
+ * This class handles all the client side only loading for the mod.
+ */
 public class ClientProxy extends CommonProxy {
 
     @Override

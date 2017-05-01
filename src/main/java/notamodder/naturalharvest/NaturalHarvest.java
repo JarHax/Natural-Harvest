@@ -42,6 +42,7 @@ public class NaturalHarvest {
     @Mod.EventHandler
     public void preInit (FMLPreInitializationEvent event) {
 
+        proxy.preInit(event);
         itemJellyfish = registry.registerItem(new Item(), "jellyfish");
         registry.registerInventoryModel(itemJellyfish);
 
