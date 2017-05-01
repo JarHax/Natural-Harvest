@@ -5,7 +5,7 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import notamodder.notalib.proxy.CommonProxy;
 
-public class ClientProxy extends CommonProxy {
+public class ServerProxy extends CommonProxy {
 
     @Override
     public void preInit (FMLPreInitializationEvent event) {

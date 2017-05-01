@@ -33,7 +33,7 @@ public class NaturalHarvest {
     @Mod.Instance(MODID)
     public static NaturalHarvest INSTANCE;
 
-    @SidedProxy(clientSide = "notamodder.naturalharvest.proxy.ClientProxy", serverSide = "notamodder.naturalharvest.proxy.CommonProxy")
+    @SidedProxy(clientSide = "notamodder.naturalharvest.proxy.ClientProxy", serverSide = "notamodder.naturalharvest.proxy.ServerProxy")
     public static CommonProxy proxy;
 
     public static RegistryHelper registry = new RegistryHelper(MODID);
