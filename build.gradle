@@ -49,7 +49,7 @@ repositories {
 
 dependencies {
 
-    compile "notalib:NotALib:${version_notalib}"
+    compile "notalib:NotALib:${version_minecraft}:${version_notalib}"
 }
 
 processResources {
