@@ -18,12 +18,13 @@ buildscript {
     dependencies {
     
         classpath 'net.minecraftforge.gradle:ForgeGradle:2.2-SNAPSHOT'
-        classpath "gradle.plugin.com.matthewprenger:CurseGradle:1.0.8"
+        classpath 'gradle.plugin.com.matthewprenger:CurseGradle:1.0.8'
     }
 }
 
+apply plugin: 'maven'
 apply plugin: 'net.minecraftforge.gradle.forge'
-apply plugin: "com.matthewprenger.cursegradle"
+apply plugin: 'com.matthewprenger.cursegradle'
 
 version = "${mod_version}" + getBuildNumber()
 group = "${mod_group}"
@@ -49,7 +50,7 @@ repositories {
 
 dependencies {
 
-    compile "notalib:NotALib:${version_minecraft}:${version_notalib}"
+    deobfCompile "notalib:NotALib:${version_minecraft}:${version_notalib}"
 }
 
 processResources {
