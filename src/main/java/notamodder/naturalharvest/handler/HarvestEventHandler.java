@@ -1,13 +1,18 @@
-package notamodder.naturalharvest.data;
+package notamodder.naturalharvest.handler;
 
-import net.minecraft.world.storage.loot.*;
+import net.minecraft.world.storage.loot.LootEntryItem;
+import net.minecraft.world.storage.loot.LootPool;
+import net.minecraft.world.storage.loot.LootTableList;
 import net.minecraft.world.storage.loot.conditions.LootCondition;
 import net.minecraft.world.storage.loot.functions.LootFunction;
 import net.minecraftforge.event.LootTableLoadEvent;
+import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import notamodder.naturalharvest.data.HarvestItems;
 import notamodder.notalib.world.loot.functions.SetColor;
 
-public class HarvestEvents {
+@EventBusSubscriber
+public class HarvestEventHandler {
     
     @SubscribeEvent
     public void onTableLoad(LootTableLoadEvent event) {

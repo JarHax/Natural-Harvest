@@ -1,13 +1,15 @@
 package notamodder.naturalharvest;
 
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.fml.common.*;
-import net.minecraftforge.fml.common.event.*;
-import notamodder.naturalharvest.data.HarvestEvents;
+import static notamodder.naturalharvest.NaturalHarvest.MODID;
+import static notamodder.naturalharvest.NaturalHarvest.NAME;
+
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.SidedProxy;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import notamodder.naturalharvest.proxy.CommonProxy;
 import notamodder.notalib.utils.RegistryHelper;
-
-import static notamodder.naturalharvest.NaturalHarvest.*;
 
 @Mod(modid = MODID, name = NAME, version = "@VERSION@")
 public class NaturalHarvest {
@@ -27,7 +29,6 @@ public class NaturalHarvest {
     public void preInit (FMLPreInitializationEvent event) {
 
         proxy.preInit(event);
-        MinecraftForge.EVENT_BUS.register(new HarvestEvents());
     }
     
     
