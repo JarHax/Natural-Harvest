@@ -10,6 +10,7 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import notamodder.naturalharvest.proxy.CommonProxy;
 import notamodder.notalib.utils.RegistryHelper;
+import notamodder.notalib.world.loot.LootHelper;
 
 @Mod(modid = MODID, name = NAME, version = "@VERSION@")
 public class NaturalHarvest {
@@ -24,6 +25,7 @@ public class NaturalHarvest {
     public static CommonProxy proxy;
 
     public static RegistryHelper registry = new RegistryHelper(MODID);
+    public static LootHelper lootReg = new LootHelper(MODID);
 
     @Mod.EventHandler
     public void preInit (FMLPreInitializationEvent event) {

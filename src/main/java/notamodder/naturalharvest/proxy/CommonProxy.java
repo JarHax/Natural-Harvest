@@ -5,6 +5,7 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import net.minecraft.world.storage.loot.LootTableList;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -32,6 +33,8 @@ public class CommonProxy {
         // OreDict
         OreDictionary.registerOre(OreDictEntries.SLIMEBALL, HarvestItems.JELLYFISH);
 
+        // Loot
+        NaturalHarvest.lootReg.addLoot(LootTableList.GAMEPLAY_FISHING_FISH, "jellyfish", "main", 2, HarvestItems.JELLYFISH);
     }
 
     public void init (FMLInitializationEvent event) {
