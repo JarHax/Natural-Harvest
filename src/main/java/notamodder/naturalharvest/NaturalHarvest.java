@@ -2,7 +2,6 @@ package notamodder.naturalharvest;
 
 import static notamodder.naturalharvest.NaturalHarvest.MODID;
 import static notamodder.naturalharvest.NaturalHarvest.NAME;
-import static notamodder.naturalharvest.NaturalHarvest.VERSION;
 
 import net.minecraft.world.storage.loot.LootEntryItem;
 import net.minecraft.world.storage.loot.LootPool;
@@ -22,12 +21,11 @@ import notamodder.naturalharvest.proxy.CommonProxy;
 import notamodder.notalib.utils.RegistryHelper;
 import notamodder.notalib.world.loot.functions.SetColor;
 
-@Mod(modid = MODID, name = NAME, version = VERSION)
+@Mod(modid = MODID, name = NAME, version = "@VERSION@")
 public class NaturalHarvest {
 
     public static final String MODID = "naturalharvest";
     public static final String NAME = "Natural Harvest";
-    public static final String VERSION = "1.0.0.0";
 
     @Mod.Instance(MODID)
     public static NaturalHarvest INSTANCE;
