@@ -124,6 +124,15 @@ curseforge {
         changelog = getGitChangelog()
         changelogType = 'markdown'
         addGameVersion "${version_minecraft}"       
+        
+        mainArtifact(jar) {
+          
+            relations {
+
+                requiredLibrary 'notalib'
+            }
+        }
+        
         addArtifact(createDeobf)
     }
 }
