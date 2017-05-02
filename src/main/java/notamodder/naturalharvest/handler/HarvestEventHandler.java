@@ -13,16 +13,16 @@ import notamodder.notalib.world.loot.functions.SetColor;
 
 @EventBusSubscriber
 public class HarvestEventHandler {
-    
+
     @SubscribeEvent
-    public void onTableLoad(LootTableLoadEvent event) {
-        
-        if(event.getName().equals(LootTableList.GAMEPLAY_FISHING_FISH)) {
-            
+    public void onTableLoad (LootTableLoadEvent event) {
+
+        if (event.getName().equals(LootTableList.GAMEPLAY_FISHING_FISH)) {
+
             final LootPool pool = event.getTable().getPool("main");
-            
-            if(pool != null)
-                pool.addEntry(new LootEntryItem(HarvestItems.JELLYFISH, 2, 0, new LootFunction[]{new SetColor(new LootCondition[]{})}, new LootCondition[]{}, "modid:jellyfish"));
+
+            if (pool != null)
+                pool.addEntry(new LootEntryItem(HarvestItems.JELLYFISH, 2, 0, new LootFunction[] { new SetColor(new LootCondition[] {}) }, new LootCondition[] {}, "modid:jellyfish"));
         }
     }
 }

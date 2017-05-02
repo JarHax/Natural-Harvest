@@ -30,8 +30,7 @@ public class NaturalHarvest {
 
         proxy.preInit(event);
     }
-    
-    
+
     @Mod.EventHandler
     public void init (FMLInitializationEvent event) {
 

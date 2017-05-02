@@ -4,7 +4,8 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import notamodder.naturalharvest.NaturalHarvest;
-import notamodder.naturalharvest.data.*;
+import notamodder.naturalharvest.data.HarvestBlocks;
+import notamodder.naturalharvest.data.HarvestItems;
 import notamodder.notalib.client.render.color.ItemColorNBT;
 
 /**
@@ -19,9 +20,10 @@ public class ClientProxy extends CommonProxy {
 
         // Item Models
         NaturalHarvest.registry.registerInventoryModel(HarvestItems.JELLYFISH);
-        
+
         // Block Models
-        //TODO this doesn't seem to be working, I may have done something wrong, will have to come back to it later
+        // TODO this doesn't seem to be working, I may have done something wrong, will have to
+        // come back to it later
         NaturalHarvest.registry.registerInventoryModel(HarvestBlocks.TREE_TAP);
     }
 
