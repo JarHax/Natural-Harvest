@@ -4,7 +4,6 @@ import static notamodder.naturalharvest.NaturalHarvest.MODID;
 import static notamodder.naturalharvest.NaturalHarvest.NAME;
 import static notamodder.naturalharvest.NaturalHarvest.VERSION;
 
-import net.minecraft.item.Item;
 import net.minecraft.world.storage.loot.LootEntryItem;
 import net.minecraft.world.storage.loot.LootPool;
 import net.minecraft.world.storage.loot.LootTableList;
@@ -18,8 +17,8 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import notamodder.naturalharvest.data.HarvestItems;
 import notamodder.naturalharvest.proxy.CommonProxy;
-import notamodder.notalib.client.render.color.ItemColorNBT;
 import notamodder.notalib.utils.RegistryHelper;
 import notamodder.notalib.world.loot.functions.SetColor;
 
@@ -37,14 +36,11 @@ public class NaturalHarvest {
     public static CommonProxy proxy;
 
     public static RegistryHelper registry = new RegistryHelper(MODID);
-    public static Item itemJellyfish;
 
     @Mod.EventHandler
     public void preInit (FMLPreInitializationEvent event) {
 
         proxy.preInit(event);
-        itemJellyfish = registry.registerItem(new Item(), "jellyfish");
-        registry.registerInventoryModel(itemJellyfish);
 
         // TODO make better loot system
         MinecraftForge.EVENT_BUS.register(this);
@@ -57,25 +53,20 @@ public class NaturalHarvest {
 
             final LootPool pool = event.getTable().getPool("main");
 
-            if (pool != null) {
-
-                pool.removeEntry("minecraft:fish");
-                pool.removeEntry("minecraft:fish#0");
-                pool.removeEntry("minecraft:fish#1");
-                pool.removeEntry("minecraft:fish#2");
-                pool.addEntry(new LootEntryItem(itemJellyfish, 100, 0, new LootFunction[] { new SetColor(new LootCondition[] {}) }, new LootCondition[] {}, "modid:jellyfish"));
-            }
+            if (pool != null)
+                pool.addEntry(new LootEntryItem(HarvestItems.JELLYFISH, 2, 0, new LootFunction[] { new SetColor(new LootCondition[] {}) }, new LootCondition[] {}, "modid:jellyfish"));
         }
     }
 
     @Mod.EventHandler
     public void init (FMLInitializationEvent event) {
 
-        registry.registerColorHandler(itemJellyfish, ItemColorNBT.INSTANCE);
+        proxy.init(event);
     }
 
     @Mod.EventHandler
     public void postInit (FMLPostInitializationEvent event) {
 
+        proxy.postInit(event);
     }
 }
