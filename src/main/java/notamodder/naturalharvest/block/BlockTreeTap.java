@@ -1,4 +1,4 @@
-package notamodder.naturalharvest.blocks;
+package notamodder.naturalharvest.block;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.*;

@@ -1,7 +1,7 @@
 package notamodder.naturalharvest.data;
 
 import net.minecraft.block.Block;
-import notamodder.naturalharvest.blocks.BlockTreeTap;
+import notamodder.naturalharvest.block.BlockTreeTap;
 
 public class HarvestBlocks {
     
