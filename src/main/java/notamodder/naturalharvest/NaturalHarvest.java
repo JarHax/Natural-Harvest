@@ -1,25 +1,13 @@
 package notamodder.naturalharvest;
 
-import static notamodder.naturalharvest.NaturalHarvest.MODID;
-import static notamodder.naturalharvest.NaturalHarvest.NAME;
-
-import net.minecraft.world.storage.loot.LootEntryItem;
-import net.minecraft.world.storage.loot.LootPool;
-import net.minecraft.world.storage.loot.LootTableList;
-import net.minecraft.world.storage.loot.conditions.LootCondition;
-import net.minecraft.world.storage.loot.functions.LootFunction;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.LootTableLoadEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.SidedProxy;
-import net.minecraftforge.fml.common.event.FMLInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import notamodder.naturalharvest.data.HarvestItems;
+import net.minecraftforge.fml.common.*;
+import net.minecraftforge.fml.common.event.*;
+import notamodder.naturalharvest.data.HarvestEvents;
 import notamodder.naturalharvest.proxy.CommonProxy;
 import notamodder.notalib.utils.RegistryHelper;
-import notamodder.notalib.world.loot.functions.SetColor;
+
+import static notamodder.naturalharvest.NaturalHarvest.*;
 
 @Mod(modid = MODID, name = NAME, version = "@VERSION@")
 public class NaturalHarvest {
@@ -39,23 +27,10 @@ public class NaturalHarvest {
     public void preInit (FMLPreInitializationEvent event) {
 
         proxy.preInit(event);
-
-        // TODO make better loot system
-        MinecraftForge.EVENT_BUS.register(this);
+        MinecraftForge.EVENT_BUS.register(new HarvestEvents());
     }
-
-    @SubscribeEvent
-    public void onTableLoad (LootTableLoadEvent event) {
-
-        if (event.getName().equals(LootTableList.GAMEPLAY_FISHING_FISH)) {
-
-            final LootPool pool = event.getTable().getPool("main");
-
-            if (pool != null)
-                pool.addEntry(new LootEntryItem(HarvestItems.JELLYFISH, 2, 0, new LootFunction[] { new SetColor(new LootCondition[] {}) }, new LootCondition[] {}, "modid:jellyfish"));
-        }
-    }
-
+    
+    
     @Mod.EventHandler
     public void init (FMLInitializationEvent event) {
 
