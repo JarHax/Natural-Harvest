@@ -5,14 +5,12 @@ import java.util.List;
 import javax.annotation.Nonnull;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
 import net.minecraftforge.oredict.OreDictionary;
 import notamodder.naturalharvest.api.treetap.ITreeTapRecipe;
 import notamodder.naturalharvest.api.treetap.TreeTapRecipe;
-import notamodder.notalib.utils.StackUtils;
 
 public class Registry {
 
@@ -20,17 +18,6 @@ public class Registry {
      * A list of all registered tree tapping recipes.
      */
     private static final List<ITreeTapRecipe> treeTapRecipes = NonNullList.create();
-
-    /**
-     * Checks if an IBlockState is a valid input for tree tapping.
-     *
-     * @param state The IBlockState to check.
-     * @return Whether or not the ItemStack is valid for tree tapping.
-     */
-    public static boolean hasTreeTapRecipe (@Nonnull IBlockState state) {
-
-        return hasTreeTapRecipe(StackUtils.getStateStack(state, 1));
-    }
 
     /**
      * Checks if an ItemStack is a valid input for tree tapping.
@@ -43,20 +30,8 @@ public class Registry {
         for (final ITreeTapRecipe recipe : treeTapRecipes)
             if (recipe.isValidInput(stack))
                 return true;
-            
+
         return false;
-    }
-
-    /**
-     * Adds a new tree tap recipe to the game.
-     *
-     * @param input The input for the recipe.
-     * @param output The output for the recipe.
-     * @param duration The amount of time (in ticks) for the recipe to complete.
-     */
-    public static void addTreeTapRecipe (IBlockState input, ItemStack output, int duration) {
-
-        addTreeTapRecipe(new TreeTapRecipe(input, output, duration));
     }
 
     /**

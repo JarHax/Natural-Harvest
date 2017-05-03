@@ -1,7 +1,6 @@
 package notamodder.naturalharvest.api.treetap;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
@@ -28,18 +27,6 @@ public class TreeTapRecipe implements ITreeTapRecipe {
      * The amount of time (in ticks) for the recipe to complete.
      */
     private final int duration;
-
-    /**
-     * Constructs a TreeTapRecipe which uses as an IBlockState input.
-     *
-     * @param input The input for the recipe.
-     * @param output The output for the recipe.
-     * @param duration The amount of time (in ticks) for the recipe to complete.
-     */
-    public TreeTapRecipe (IBlockState input, ItemStack output, int duration) {
-
-        this(StackUtils.getStateStack(input, 1), output, duration);
-    }
 
     /**
      * Constructs a TreeTapRecipe which uses as an oredict String input.
