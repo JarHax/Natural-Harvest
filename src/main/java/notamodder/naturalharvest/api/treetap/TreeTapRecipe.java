@@ -79,7 +79,7 @@ public class TreeTapRecipe implements ITreeTapRecipe {
     /**
      * Constructs a TreeTapRecipe which uses as an ItemStack list input.
      *
-     * @param input The input for the recipe.
+     * @param inputs The input for the recipe.
      * @param output The output for the recipe.
      * @param duration The amount of time (in ticks) for the recipe to complete.
      */
