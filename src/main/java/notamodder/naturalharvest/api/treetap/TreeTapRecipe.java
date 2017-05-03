@@ -99,10 +99,12 @@ public class TreeTapRecipe implements ITreeTapRecipe {
     @Override
     public boolean isValidInput (ItemStack stack) {
 
-        for (final ItemStack validInput : this.inputs)
-            if (StackUtils.areStacksSimilar(validInput, stack))
+        for (final ItemStack validInput : this.inputs) {
+            if (StackUtils.areStacksSimilar(validInput, stack)) {
                 return true;
-
+            }
+        }
+        
         return false;
     }
 

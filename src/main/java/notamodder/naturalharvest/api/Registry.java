@@ -27,10 +27,12 @@ public class Registry {
      */
     public static boolean hasTreeTapRecipe (@Nonnull ItemStack stack) {
 
-        for (final ITreeTapRecipe recipe : treeTapRecipes)
-            if (recipe.isValidInput(stack))
+        for (final ITreeTapRecipe recipe : treeTapRecipes) {
+            if (recipe.isValidInput(stack)) {
                 return true;
-
+            }
+        }
+        
         return false;
     }
 
@@ -123,8 +125,9 @@ public class Registry {
      */
     public static void removeTreeTapRecipe (String input) {
 
-        for (final ItemStack stack : OreDictionary.getOres(input))
+        for (final ItemStack stack : OreDictionary.getOres(input)) {
             removeTreeTapRecipe(stack);
+        }
     }
 
     /**
