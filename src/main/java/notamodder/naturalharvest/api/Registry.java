@@ -1,32 +1,165 @@
 package notamodder.naturalharvest.api;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.List;
 
+import javax.annotation.Nonnull;
+
+import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.NonNullList;
+import net.minecraftforge.oredict.OreDictionary;
+import notamodder.naturalharvest.api.treetap.ITreeTapRecipe;
+import notamodder.naturalharvest.api.treetap.TreeTapRecipe;
+import notamodder.notalib.utils.StackUtils;
 
 public class Registry {
 
-    private static final Map<IBlockState, ItemStack> TREE_TAPPING_REGISTRY = new HashMap<>();
+    /**
+     * A list of all registered tree tapping recipes.
+     */
+    private static final List<ITreeTapRecipe> treeTapRecipes = NonNullList.create();
 
-    public static void registerTreeTapping (IBlockState state, ItemStack result) {
+    /**
+     * Checks if an IBlockState is a valid input for tree tapping.
+     *
+     * @param state The IBlockState to check.
+     * @return Whether or not the ItemStack is valid for tree tapping.
+     */
+    public static boolean hasTreeTapRecipe (@Nonnull IBlockState state) {
 
-        getTreeTappingRegistry().put(state, result);
+        return hasTreeTapRecipe(StackUtils.getStateStack(state, 1));
     }
 
-    public static boolean canTap (IBlockState state) {
+    /**
+     * Checks if an ItemStack is a valid input for tree tapping.
+     *
+     * @param stack The ItemStack to check.
+     * @return Whether or not the ItemStack is valid for tree tapping.
+     */
+    public static boolean hasTreeTapRecipe (@Nonnull ItemStack stack) {
 
-        return getTreeTappingRegistry().containsKey(state);
+        for (final ITreeTapRecipe recipe : treeTapRecipes)
+            if (recipe.isValidInput(stack))
+                return true;
+            
+        return false;
     }
 
-    public static boolean removeTreeTapping (IBlockState state) {
+    /**
+     * Adds a new tree tap recipe to the game.
+     *
+     * @param input The input for the recipe.
+     * @param output The output for the recipe.
+     * @param duration The amount of time (in ticks) for the recipe to complete.
+     */
+    public static void addTreeTapRecipe (IBlockState input, ItemStack output, int duration) {
 
-        return getTreeTappingRegistry().remove(state) != null;
+        addTreeTapRecipe(new TreeTapRecipe(input, output, duration));
     }
 
-    public static Map<IBlockState, ItemStack> getTreeTappingRegistry () {
+    /**
+     * Adds a new tree tap recipe to the game.
+     *
+     * @param input The input for the recipe.
+     * @param output The output for the recipe.
+     * @param duration The amount of time (in ticks) for the recipe to complete.
+     */
+    public static void addTreeTapRecipe (String input, ItemStack output, int duration) {
 
-        return TREE_TAPPING_REGISTRY;
+        addTreeTapRecipe(new TreeTapRecipe(input, output, duration));
+    }
+
+    /**
+     * Adds a new tree tap recipe to the game.
+     *
+     * @param input The input for the recipe.
+     * @param output The output for the recipe.
+     * @param duration The amount of time (in ticks) for the recipe to complete.
+     */
+    public static void addTreeTapRecipe (Block input, ItemStack output, int duration) {
+
+        addTreeTapRecipe(new TreeTapRecipe(input, output, duration));
+    }
+
+    /**
+     * Adds a new tree tap recipe to the game.
+     *
+     * @param input The input for the recipe.
+     * @param output The output for the recipe.
+     * @param duration The amount of time (in ticks) for the recipe to complete.
+     */
+    public static void addTreeTapRecipe (Item input, ItemStack output, int duration) {
+
+        addTreeTapRecipe(new TreeTapRecipe(input, output, duration));
+    }
+
+    /**
+     * Adds a new tree tap recipe to the game.
+     *
+     * @param input The input for the recipe.
+     * @param output The output for the recipe.
+     * @param duration The amount of time (in ticks) for the recipe to complete.
+     */
+    public static void addTreeTapRecipe (ItemStack input, ItemStack output, int duration) {
+
+        addTreeTapRecipe(new TreeTapRecipe(input, output, duration));
+    }
+
+    /**
+     * Adds a new tree tap recipe to the game.
+     *
+     * @param inputs The accepted inputs for the recipe.
+     * @param output The output for the recipe.
+     * @param duration The amount of time (in ticks) for the recipe to complete.
+     */
+    public static void addTreeTapRecipe (NonNullList<ItemStack> inputs, ItemStack output, int duration) {
+
+        addTreeTapRecipe(new TreeTapRecipe(inputs, output, duration));
+    }
+
+    /**
+     * Adds a new tree tap recipe to the game.
+     *
+     * @param recipe The recipe to add.
+     */
+    public static void addTreeTapRecipe (ITreeTapRecipe recipe) {
+
+        treeTapRecipes.add(recipe);
+    }
+
+    /**
+     * Attempts to remove a tree tap recipe.
+     *
+     * @param recipe The recipe to remove.
+     * @return Whether or not the recipe was removed.
+     */
+    public static boolean removeTreeTapRecipe (ITreeTapRecipe recipe) {
+
+        return treeTapRecipes.remove(recipe);
+    }
+
+    /**
+     * Attempts to remove all tree tap recipes which accept the ore dict name passed as an
+     * entry.
+     *
+     * @param input The input ore dictionary string.
+     */
+    public static void removeTreeTapRecipe (String input) {
+
+        for (final ItemStack stack : OreDictionary.getOres(input))
+            removeTreeTapRecipe(stack);
+    }
+
+    /**
+     * Attempts to remove all tree tap recipes which accept the passed ItemStack as an input.
+     *
+     * @param input The input to remove.
+     * @return Whether or not recipes were removed.
+     */
+    public static boolean removeTreeTapRecipe (ItemStack input) {
+
+        return treeTapRecipes.removeIf(recipe -> recipe.isValidInput(input));
     }
 }
