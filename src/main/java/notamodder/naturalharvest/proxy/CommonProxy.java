@@ -1,9 +1,6 @@
 package notamodder.naturalharvest.proxy;
 
-import net.minecraft.block.BlockPlanks;
-import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.storage.loot.LootTableList;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -44,17 +41,11 @@ public class CommonProxy {
     public void postInit (FMLPostInitializationEvent event) {
 
         // TreeTap Registry
-        // TODO make this actually work for all the woods, it messes up when the log is placed
-        // on a different axis, would possibly be better moving to ItemStacks to hold the info
-        // or just the plain old Block
-        for (final BlockPlanks.EnumType type : BlockPlanks.EnumType.values()) {
-            IBlockState state;
-            if (type.getMetadata() < 4)
-                state = Blocks.LOG.getStateFromMeta(type.getMetadata());
-            else
-                state = Blocks.LOG2.getStateFromMeta(type.getMetadata());
-            Registry.registerTreeTapping(state, new ItemStack(Items.SLIME_BALL));
-        }
-        System.out.println(Registry.getTreeTappingRegistry());
+        Registry.addTreeTapRecipe(new ItemStack(Blocks.LOG, 1, 0), new ItemStack(HarvestItems.JELLYFISH), 100);
+        Registry.addTreeTapRecipe(new ItemStack(Blocks.LOG, 1, 1), new ItemStack(HarvestItems.JELLYFISH), 100);
+        Registry.addTreeTapRecipe(new ItemStack(Blocks.LOG, 1, 2), new ItemStack(HarvestItems.JELLYFISH), 100);
+        Registry.addTreeTapRecipe(new ItemStack(Blocks.LOG, 1, 3), new ItemStack(HarvestItems.JELLYFISH), 100);
+        Registry.addTreeTapRecipe(new ItemStack(Blocks.LOG2, 1, 0), new ItemStack(HarvestItems.JELLYFISH), 100);
+        Registry.addTreeTapRecipe(new ItemStack(Blocks.LOG2, 1, 1), new ItemStack(HarvestItems.JELLYFISH), 100);
     }
 }

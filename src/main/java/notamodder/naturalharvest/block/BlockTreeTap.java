@@ -7,6 +7,7 @@ import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
@@ -24,9 +25,15 @@ public class BlockTreeTap extends Block {
     @Override
     public boolean canPlaceBlockAt (World worldIn, BlockPos pos) {
 
-        for (final EnumFacing facing : FACING.getAllowedValues())
-            if (Registry.canTap(worldIn.getBlockState(pos.offset(facing))))
+        for (final EnumFacing facing : FACING.getAllowedValues()) {
+
+            final BlockPos offset = pos.offset(facing);
+            final ItemStack stack = worldIn.getBlockState(offset).getBlock().getItem(worldIn, offset, worldIn.getBlockState(offset));
+
+            if (Registry.hasTreeTapRecipe(stack))
                 return true;
+        }
+
         return false;
     }
 
