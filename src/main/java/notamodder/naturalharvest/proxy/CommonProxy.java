@@ -3,6 +3,9 @@ package notamodder.naturalharvest.proxy;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.storage.loot.LootTableList;
+import net.minecraft.world.storage.loot.RandomValueRange;
+import net.minecraft.world.storage.loot.conditions.LootCondition;
+import net.minecraft.world.storage.loot.functions.SetDamage;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -11,6 +14,7 @@ import notamodder.naturalharvest.NaturalHarvest;
 import notamodder.naturalharvest.api.Registry;
 import notamodder.naturalharvest.data.HarvestBlocks;
 import notamodder.naturalharvest.data.HarvestItems;
+import notamodder.naturalharvest.item.ItemHarvestFish;
 import notamodder.notalib.utils.OreDictEntries;
 
 /**
@@ -23,6 +27,7 @@ public class CommonProxy {
 
         // Item Registry
         NaturalHarvest.registry.registerItem(HarvestItems.JELLYFISH, "jellyfish");
+        NaturalHarvest.registry.registerItem(HarvestItems.FISH, "fish");
 
         // Block Registry
         NaturalHarvest.registry.registerBlock(HarvestBlocks.TREE_TAP, "tree_tap");
@@ -31,7 +36,8 @@ public class CommonProxy {
         OreDictionary.registerOre(OreDictEntries.SLIMEBALL, HarvestItems.JELLYFISH);
 
         // Loot
-        NaturalHarvest.registry.addLoot(LootTableList.GAMEPLAY_FISHING_FISH, "jellyfish", "main", 2, HarvestItems.JELLYFISH);
+        NaturalHarvest.registry.addLoot(LootTableList.GAMEPLAY_FISHING_FISH, "jellyfish", "main", 100, HarvestItems.JELLYFISH);
+        NaturalHarvest.registry.addLoot(LootTableList.GAMEPLAY_FISHING_FISH, "jellyfish", "main", 100, HarvestItems.FISH).addFunction(new SetDamage(new LootCondition[0], new RandomValueRange(0, ItemHarvestFish.VARIANTS.length)));
     }
 
     public void init (FMLInitializationEvent event) {

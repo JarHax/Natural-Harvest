@@ -20,10 +20,9 @@ public class ClientProxy extends CommonProxy {
 
         // Item Models
         NaturalHarvest.registry.registerInventoryModel(HarvestItems.JELLYFISH);
+        NaturalHarvest.registry.registerInventoryModel(HarvestItems.FISH);
 
         // Block Models
-        // TODO this doesn't seem to be working, I may have done something wrong, will have to
-        // come back to it later
         NaturalHarvest.registry.registerInventoryModel(HarvestBlocks.TREE_TAP);
     }
 
@@ -33,7 +32,6 @@ public class ClientProxy extends CommonProxy {
         super.init(event);
 
         // Item Color Handlers
-        System.out.println("Client");
         NaturalHarvest.registry.registerColorHandler(HarvestItems.JELLYFISH, ItemColorNBT.INSTANCE);
     }
 
