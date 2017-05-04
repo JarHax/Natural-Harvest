@@ -14,7 +14,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import notamodder.naturalharvest.proxy.CommonProxy;
 import notamodder.notalib.utils.RegistryHelper;
 
-@Mod(modid = MODID, name = NAME, version = "@VERSION@")
+@Mod(modid = MODID, name = NAME, version = "@VERSION@", dependencies = "required-after:notalib@[@VERSION_NOTALIB@,)")
 public class NaturalHarvest {
 
     public static final String MODID = "naturalharvest";
