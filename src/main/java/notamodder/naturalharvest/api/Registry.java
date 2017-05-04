@@ -32,7 +32,7 @@ public class Registry {
                 return true;
             }
         }
-        
+
         return false;
     }
 

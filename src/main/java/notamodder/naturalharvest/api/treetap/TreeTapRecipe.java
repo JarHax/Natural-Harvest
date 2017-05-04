@@ -104,7 +104,7 @@ public class TreeTapRecipe implements ITreeTapRecipe {
                 return true;
             }
         }
-        
+
         return false;
     }
 

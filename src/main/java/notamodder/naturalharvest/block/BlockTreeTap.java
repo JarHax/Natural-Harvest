@@ -30,7 +30,7 @@ public class BlockTreeTap extends Block {
                 return true;
             }
         }
-        
+
         return false;
     }
 
@@ -55,7 +55,7 @@ public class BlockTreeTap extends Block {
                 }
             }
         }
-        
+
         return this.getDefaultState();
     }
 
