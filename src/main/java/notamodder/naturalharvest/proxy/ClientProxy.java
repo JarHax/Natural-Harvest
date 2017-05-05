@@ -6,7 +6,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import notamodder.naturalharvest.NaturalHarvest;
 import notamodder.naturalharvest.data.HarvestBlocks;
 import notamodder.naturalharvest.data.HarvestItems;
-import notamodder.notalib.client.render.color.ItemColorNBT;
+import notamodder.notalib.lib.ColorHandlers;
 
 /**
  * This class handles all the client side only loading for the mod.
@@ -32,7 +32,7 @@ public class ClientProxy extends CommonProxy {
         super.init(event);
 
         // Item Color Handlers
-        NaturalHarvest.registry.registerColorHandler(HarvestItems.JELLYFISH, ItemColorNBT.INSTANCE);
+        NaturalHarvest.registry.registerColorHandler(HarvestItems.JELLYFISH, ColorHandlers.ITEM_NBT);
     }
 
     @Override
