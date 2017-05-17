@@ -33,7 +33,7 @@ public class ClientProxy extends CommonProxy {
         super.init(event);
 
         // Item Color Handlers
-        NaturalHarvest.registry.registerColorHandler(HarvestItems.JELLYFISH, ColorHandlers.ITEM_NBT);
+        NaturalHarvest.registry.registerColorHandler(HarvestItems.JELLYFISH, ColorHandlers.ITEM_MCCOLOR);
     }
 
     @Override
