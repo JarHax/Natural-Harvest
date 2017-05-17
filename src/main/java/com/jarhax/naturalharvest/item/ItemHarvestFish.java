@@ -1,4 +1,4 @@
-package notamodder.naturalharvest.item;
+package com.jarhax.naturalharvest.item;
 
 import notamodder.notalib.item.ItemSubType;
 

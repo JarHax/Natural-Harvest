@@ -1,7 +1,6 @@
-package notamodder.naturalharvest;
+package com.jarhax.naturalharvest;
 
-import static notamodder.naturalharvest.NaturalHarvest.MODID;
-import static notamodder.naturalharvest.NaturalHarvest.NAME;
+import com.jarhax.naturalharvest.proxy.CommonProxy;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Items;
@@ -11,10 +10,11 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import notamodder.naturalharvest.proxy.CommonProxy;
 import notamodder.notalib.utils.RegistryHelper;
 
-@Mod(modid = MODID, name = NAME, version = "@VERSION@", dependencies = "required-after:notalib@[@VERSION_NOTALIB@,)")
+import static com.jarhax.naturalharvest.NaturalHarvest.*;
+
+@Mod(modid = MODID, name = NAME, version = "@VERSION@")
 public class NaturalHarvest {
 
     public static final String MODID = "naturalharvest";
@@ -23,7 +23,7 @@ public class NaturalHarvest {
     @Mod.Instance(MODID)
     public static NaturalHarvest INSTANCE;
 
-    @SidedProxy(clientSide = "notamodder.naturalharvest.proxy.ClientProxy", serverSide = "notamodder.naturalharvest.proxy.ServerProxy")
+    @SidedProxy(clientSide = "com.jarhax.naturalharvest.proxy.ClientProxy", serverSide = "com.jarhax.naturalharvest.proxy.ServerProxy")
     public static CommonProxy proxy;
 
     public static RegistryHelper registry = new RegistryHelper(MODID).setTab(new CreativeTabs(MODID) {

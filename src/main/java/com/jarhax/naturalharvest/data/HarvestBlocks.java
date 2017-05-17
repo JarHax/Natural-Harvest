@@ -1,6 +1,6 @@
-package notamodder.naturalharvest.data;
+package com.jarhax.naturalharvest.data;
 
-import notamodder.naturalharvest.block.BlockTreeTap;
+import com.jarhax.naturalharvest.block.BlockTreeTap;
 
 public class HarvestBlocks {
 

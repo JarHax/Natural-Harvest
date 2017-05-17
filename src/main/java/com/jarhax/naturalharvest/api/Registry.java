@@ -1,16 +1,17 @@
-package notamodder.naturalharvest.api;
+package com.jarhax.naturalharvest.api;
 
 import java.util.List;
 
 import javax.annotation.Nonnull;
+
+import com.jarhax.naturalharvest.api.treetap.ITreeTapRecipe;
+import com.jarhax.naturalharvest.api.treetap.TreeTapRecipe;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
 import net.minecraftforge.oredict.OreDictionary;
-import notamodder.naturalharvest.api.treetap.ITreeTapRecipe;
-import notamodder.naturalharvest.api.treetap.TreeTapRecipe;
 
 public class Registry {
 

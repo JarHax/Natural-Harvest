@@ -1,4 +1,4 @@
-package notamodder.naturalharvest.item;
+package com.jarhax.naturalharvest.item;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;

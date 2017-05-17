@@ -1,4 +1,4 @@
-package notamodder.naturalharvest.data;
+package com.jarhax.naturalharvest.data;
 
 public enum VegetableType {
 

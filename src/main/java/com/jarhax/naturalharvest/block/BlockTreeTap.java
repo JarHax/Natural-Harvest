@@ -1,4 +1,6 @@
-package notamodder.naturalharvest.block;
+package com.jarhax.naturalharvest.block;
+
+import com.jarhax.naturalharvest.api.Registry;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.MapColor;
@@ -12,7 +14,6 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import notamodder.naturalharvest.api.Registry;
 
 public class BlockTreeTap extends Block {
 

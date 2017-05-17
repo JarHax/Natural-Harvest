@@ -1,4 +1,4 @@
-package notamodder.naturalharvest.api.treetap;
+package com.jarhax.naturalharvest.api.treetap;
 
 import javax.annotation.Nonnull;
 

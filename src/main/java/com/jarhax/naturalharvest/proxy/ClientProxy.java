@@ -1,11 +1,12 @@
-package notamodder.naturalharvest.proxy;
+package com.jarhax.naturalharvest.proxy;
+
+import com.jarhax.naturalharvest.NaturalHarvest;
+import com.jarhax.naturalharvest.data.HarvestBlocks;
+import com.jarhax.naturalharvest.data.HarvestItems;
 
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import notamodder.naturalharvest.NaturalHarvest;
-import notamodder.naturalharvest.data.HarvestBlocks;
-import notamodder.naturalharvest.data.HarvestItems;
 import notamodder.notalib.lib.ColorHandlers;
 
 /**

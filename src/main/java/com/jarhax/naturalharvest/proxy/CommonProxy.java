@@ -1,4 +1,10 @@
-package notamodder.naturalharvest.proxy;
+package com.jarhax.naturalharvest.proxy;
+
+import com.jarhax.naturalharvest.NaturalHarvest;
+import com.jarhax.naturalharvest.api.Registry;
+import com.jarhax.naturalharvest.data.HarvestBlocks;
+import com.jarhax.naturalharvest.data.HarvestItems;
+import com.jarhax.naturalharvest.item.ItemHarvestFish;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
@@ -10,11 +16,6 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.oredict.OreDictionary;
-import notamodder.naturalharvest.NaturalHarvest;
-import notamodder.naturalharvest.api.Registry;
-import notamodder.naturalharvest.data.HarvestBlocks;
-import notamodder.naturalharvest.data.HarvestItems;
-import notamodder.naturalharvest.item.ItemHarvestFish;
 import notamodder.notalib.utils.OreDictEntries;
 
 /**

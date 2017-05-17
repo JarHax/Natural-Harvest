@@ -1,4 +1,4 @@
-package notamodder.naturalharvest.api.treetap;
+package com.jarhax.naturalharvest.api.treetap;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;

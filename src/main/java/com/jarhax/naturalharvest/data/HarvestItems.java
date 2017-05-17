@@ -1,8 +1,9 @@
-package notamodder.naturalharvest.data;
+package com.jarhax.naturalharvest.data;
+
+import com.jarhax.naturalharvest.item.ItemHarvestFish;
+import com.jarhax.naturalharvest.item.ItemJellyfish;
 
 import net.minecraft.item.Item;
-import notamodder.naturalharvest.item.ItemHarvestFish;
-import notamodder.naturalharvest.item.ItemJellyfish;
 
 public class HarvestItems {
 

@@ -1,4 +1,4 @@
-package notamodder.naturalharvest.proxy;
+package com.jarhax.naturalharvest.proxy;
 
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
