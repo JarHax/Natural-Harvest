@@ -36,8 +36,8 @@ public class CommonProxy {
         OreDictionary.registerOre(OreDictEntries.SLIMEBALL, HarvestItems.JELLYFISH);
 
         // Loot
-        NaturalHarvest.registry.addLoot(LootTableList.GAMEPLAY_FISHING_FISH, "jellyfish", "main", 100, HarvestItems.JELLYFISH);
-        NaturalHarvest.registry.addLoot(LootTableList.GAMEPLAY_FISHING_FISH, "fish", "main", 100, HarvestItems.FISH).addFunction(new SetDamage(new LootCondition[0], new RandomValueRange(0, ItemHarvestFish.VARIANTS.length)));
+        NaturalHarvest.registry.addLoot(LootTableList.GAMEPLAY_FISHING_FISH, "jellyfish", "main", 2, HarvestItems.JELLYFISH);
+        NaturalHarvest.registry.addLoot(LootTableList.GAMEPLAY_FISHING_FISH, "fish", "main", 45, HarvestItems.FISH).addFunction(new SetDamage(new LootCondition[0], new RandomValueRange(0, ItemHarvestFish.VARIANTS.length)));
     }
 
     public void init (FMLInitializationEvent event) {
