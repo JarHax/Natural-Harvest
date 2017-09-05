@@ -5,15 +5,12 @@ import static com.jarhax.naturalharvest.NaturalHarvest.NAME;
 
 import com.jarhax.naturalharvest.proxy.CommonProxy;
 
-import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.init.Items;
-import net.minecraft.item.ItemStack;
+import net.darkhax.bookshelf.registry.RegistryHelper;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import notamodder.notalib.utils.RegistryHelper;
 
 @Mod(modid = MODID, name = NAME, version = "@VERSION@")
 public class NaturalHarvest {
@@ -27,16 +24,7 @@ public class NaturalHarvest {
     @SidedProxy(clientSide = "com.jarhax.naturalharvest.proxy.ClientProxy", serverSide = "com.jarhax.naturalharvest.proxy.ServerProxy")
     public static CommonProxy proxy;
 
-    public static RegistryHelper registry = new RegistryHelper(MODID).setTab(new CreativeTabs(MODID) {
-
-        // TODO make a proper creative tab
-        @Override
-        public ItemStack getTabIconItem () {
-
-            return new ItemStack(Items.SUGAR);
-        }
-
-    });
+    public static RegistryHelper registry = new RegistryHelper(MODID);
 
     @Mod.EventHandler
     public void preInit (FMLPreInitializationEvent event) {

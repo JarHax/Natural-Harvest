@@ -4,10 +4,10 @@ import com.jarhax.naturalharvest.NaturalHarvest;
 import com.jarhax.naturalharvest.data.HarvestBlocks;
 import com.jarhax.naturalharvest.data.HarvestItems;
 
+import net.darkhax.bookshelf.data.ColorHandlers;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import notamodder.notalib.lib.ColorHandlers;
 
 /**
  * This class handles all the client side only loading for the mod.

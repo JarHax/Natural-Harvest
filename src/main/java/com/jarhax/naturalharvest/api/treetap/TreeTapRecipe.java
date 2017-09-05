@@ -1,11 +1,11 @@
 package com.jarhax.naturalharvest.api.treetap;
 
+import net.darkhax.bookshelf.util.StackUtils;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
 import net.minecraftforge.oredict.OreDictionary;
-import notamodder.notalib.utils.StackUtils;
 
 /**
  * A default implementation of {@link notamodder.naturalharvest.api.treetap.ITreeTapRecipe}

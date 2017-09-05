@@ -1,6 +1,6 @@
 package com.jarhax.naturalharvest.item;
 
-import notamodder.notalib.item.ItemSubType;
+import net.darkhax.bookshelf.item.ItemSubType;
 
 public class ItemHarvestFish extends ItemSubType {
 

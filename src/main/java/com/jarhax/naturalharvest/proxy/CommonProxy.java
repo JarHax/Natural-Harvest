@@ -6,6 +6,7 @@ import com.jarhax.naturalharvest.data.HarvestBlocks;
 import com.jarhax.naturalharvest.data.HarvestItems;
 import com.jarhax.naturalharvest.item.ItemHarvestFish;
 
+import net.darkhax.bookshelf.util.OreDictUtils;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.storage.loot.LootTableList;
@@ -16,7 +17,6 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.oredict.OreDictionary;
-import notamodder.notalib.utils.OreDictEntries;
 
 /**
  * This class contains code which is meant to be executed on both the client and server. Any
@@ -34,7 +34,7 @@ public class CommonProxy {
         NaturalHarvest.registry.registerBlock(HarvestBlocks.TREE_TAP, "tree_tap");
 
         // OreDict
-        OreDictionary.registerOre(OreDictEntries.SLIMEBALL, HarvestItems.JELLYFISH);
+        OreDictionary.registerOre(OreDictUtils.SLIMEBALL, HarvestItems.JELLYFISH);
 
         // Loot
         NaturalHarvest.registry.addLoot(LootTableList.GAMEPLAY_FISHING_FISH, "jellyfish", "main", 2, HarvestItems.JELLYFISH);
