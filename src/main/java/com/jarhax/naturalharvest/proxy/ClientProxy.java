@@ -1,7 +1,6 @@
 package com.jarhax.naturalharvest.proxy;
 
 import com.jarhax.naturalharvest.NaturalHarvest;
-import com.jarhax.naturalharvest.data.HarvestBlocks;
 import com.jarhax.naturalharvest.data.HarvestItems;
 
 import net.darkhax.bookshelf.data.ColorHandlers;
@@ -18,13 +17,6 @@ public class ClientProxy extends CommonProxy {
     public void preInit (FMLPreInitializationEvent event) {
 
         super.preInit(event);
-
-        // Item Models
-        NaturalHarvest.registry.registerInventoryModel(HarvestItems.JELLYFISH);
-        NaturalHarvest.registry.registerInventoryModel(HarvestItems.FISH);
-
-        // Block Models
-        NaturalHarvest.registry.registerInventoryModel(HarvestBlocks.TREE_TAP);
     }
 
     @Override
