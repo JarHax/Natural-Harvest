@@ -20,11 +20,14 @@ public class ItemJellyfish extends Item {
     @SideOnly(Side.CLIENT)
     public void getSubItems (CreativeTabs tab, NonNullList<ItemStack> subItems) {
 
-        for (final MCColor color : MCColor.VANILLA_COLORS) {
+    	if (this.isInCreativeTab(tab)) {
+    		
+            for (final MCColor color : MCColor.VANILLA_COLORS) {
 
-            final ItemStack stack = StackUtils.prepareStack(new ItemStack(this));
-            color.writeToStack(stack);
-            subItems.add(stack);
-        }
+                final ItemStack stack = StackUtils.prepareStack(new ItemStack(this));
+                color.writeToStack(stack);
+                subItems.add(stack);
+            }
+    	}
     }
 }
