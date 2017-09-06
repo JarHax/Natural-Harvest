@@ -1,7 +1,10 @@
 package com.jarhax.naturalharvest.item;
 
+import net.darkhax.bookshelf.data.ColorHandlers;
+import net.darkhax.bookshelf.item.IColorfulItem;
 import net.darkhax.bookshelf.lib.MCColor;
 import net.darkhax.bookshelf.util.StackUtils;
+import net.minecraft.client.renderer.color.IItemColor;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -9,7 +12,7 @@ import net.minecraft.util.NonNullList;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class ItemJellyfish extends Item {
+public class ItemJellyfish extends Item implements IColorfulItem {
 
     public ItemJellyfish () {
 
@@ -30,4 +33,11 @@ public class ItemJellyfish extends Item {
             }
     	}
     }
+
+	@Override
+	@SideOnly(Side.CLIENT)
+	public IItemColor getColorHandler() {
+		
+		return ColorHandlers.ITEM_MCCOLOR;
+	}
 }

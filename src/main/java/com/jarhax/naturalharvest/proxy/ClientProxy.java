@@ -1,9 +1,5 @@
 package com.jarhax.naturalharvest.proxy;
 
-import com.jarhax.naturalharvest.NaturalHarvest;
-import com.jarhax.naturalharvest.data.HarvestItems;
-
-import net.darkhax.bookshelf.data.ColorHandlers;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -23,9 +19,6 @@ public class ClientProxy extends CommonProxy {
     public void init (FMLInitializationEvent event) {
 
         super.init(event);
-
-        // Item Color Handlers
-        NaturalHarvest.registry.registerColorHandler(HarvestItems.JELLYFISH, ColorHandlers.ITEM_MCCOLOR);
     }
 
     @Override
