@@ -1,14 +1,11 @@
 package com.jarhax.naturalharvest.proxy;
 
 import com.jarhax.naturalharvest.NaturalHarvest;
-import com.jarhax.naturalharvest.api.Registry;
 import com.jarhax.naturalharvest.data.HarvestBlocks;
 import com.jarhax.naturalharvest.data.HarvestItems;
 import com.jarhax.naturalharvest.item.ItemHarvestFish;
 
 import net.darkhax.bookshelf.util.OreDictUtils;
-import net.minecraft.init.Blocks;
-import net.minecraft.item.ItemStack;
 import net.minecraft.world.storage.loot.LootTableList;
 import net.minecraft.world.storage.loot.RandomValueRange;
 import net.minecraft.world.storage.loot.conditions.LootCondition;
@@ -47,12 +44,5 @@ public class CommonProxy {
 
     public void postInit (FMLPostInitializationEvent event) {
 
-        // TreeTap Registry
-        Registry.addTreeTapRecipe(new ItemStack(Blocks.LOG, 1, 0), new ItemStack(HarvestItems.JELLYFISH), 100);
-        Registry.addTreeTapRecipe(new ItemStack(Blocks.LOG, 1, 1), new ItemStack(HarvestItems.JELLYFISH), 100);
-        Registry.addTreeTapRecipe(new ItemStack(Blocks.LOG, 1, 2), new ItemStack(HarvestItems.JELLYFISH), 100);
-        Registry.addTreeTapRecipe(new ItemStack(Blocks.LOG, 1, 3), new ItemStack(HarvestItems.JELLYFISH), 100);
-        Registry.addTreeTapRecipe(new ItemStack(Blocks.LOG2, 1, 0), new ItemStack(HarvestItems.JELLYFISH), 100);
-        Registry.addTreeTapRecipe(new ItemStack(Blocks.LOG2, 1, 1), new ItemStack(HarvestItems.JELLYFISH), 100);
     }
 }

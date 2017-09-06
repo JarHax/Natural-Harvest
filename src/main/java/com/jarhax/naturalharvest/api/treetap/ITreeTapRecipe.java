@@ -4,11 +4,12 @@ import javax.annotation.Nonnull;
 
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
+import net.minecraftforge.registries.IForgeRegistryEntry;
 
 /**
  * The backing interface for tree tapping recipes. This can be used to make new recipe types.
  */
-public interface ITreeTapRecipe {
+public interface ITreeTapRecipe extends IForgeRegistryEntry<ITreeTapRecipe> {
 
     /**
      * Gets a list of inputs for this recipe.

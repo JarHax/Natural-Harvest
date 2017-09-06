@@ -6,12 +6,13 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
 import net.minecraftforge.oredict.OreDictionary;
+import net.minecraftforge.registries.IForgeRegistryEntry;
 
 /**
  * A default implementation of {@link notamodder.naturalharvest.api.treetap.ITreeTapRecipe}
  * which can use IBlockState, Item, Block, ItemStack, Ore Dict names and more as inputs.
  */
-public class TreeTapRecipe implements ITreeTapRecipe {
+public class TreeTapRecipe extends IForgeRegistryEntry.Impl<ITreeTapRecipe> implements ITreeTapRecipe {
 
     /**
      * A list of ItemStack that are accepted as inputs.

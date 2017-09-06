@@ -1,7 +1,5 @@
 package com.jarhax.naturalharvest.block;
 
-import com.jarhax.naturalharvest.api.Registry;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
@@ -40,7 +38,7 @@ public class BlockTreeTap extends Block {
         final BlockPos offset = pos.offset(side.getOpposite());
         final IBlockState state = world.getBlockState(offset);
         final ItemStack stack = state.getBlock().getItem(world, pos, state);
-        return side.getAxis().isHorizontal() && Registry.hasTreeTapRecipe(stack);
+        return side.getAxis().isHorizontal() && false; //Registry.hasTreeTapRecipe(stack);
     }
 
     @Override
