@@ -1,18 +1,52 @@
-package com.jarhax.naturalharvest.registry;
+package com.jarhax.naturalharvest.handler;
 
+import com.jarhax.naturalharvest.NaturalHarvest;
 import com.jarhax.naturalharvest.api.treetap.ITreeTapRecipe;
 import com.jarhax.naturalharvest.api.treetap.TreeTapRecipe;
 import com.jarhax.naturalharvest.data.HarvestItems;
 
+import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.registries.IForgeRegistryEntry;
 
-public class RegistryHandler {
+public class RegistrationHandler {
 
+    @SubscribeEvent
+    public void registerBlocks (RegistryEvent.Register<Block> event) {
+
+        for (final Block block : NaturalHarvest.registry.getBlocks()) {
+
+            event.getRegistry().register(block);
+        }
+    }
+
+    @SubscribeEvent
+    public void registerItems (RegistryEvent.Register<Item> event) {
+
+        for (final Item item : NaturalHarvest.registry.getItems()) {
+
+            event.getRegistry().register(item);
+        }
+    }
+
+    @SubscribeEvent
+    @SideOnly(Side.CLIENT)
+    public void modelRegistryEvent (ModelRegistryEvent event) {
+
+        for (final Item item : NaturalHarvest.registry.getItems()) {
+
+            NaturalHarvest.registry.registerInventoryModel(item);
+        }
+    }
+    
 	@SubscribeEvent
 	public void registerTreeTapRecipes(RegistryEvent.Register<ITreeTapRecipe> event) {
 		
